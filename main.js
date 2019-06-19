@@ -1,7 +1,8 @@
 let logoScreen = new LogoScreen();
 let loadingSceeen = new LoadingScreen();
 let homeScreen = new HomeScreen();
-
+let gameScreen = new GameScreen();
+ 
 window.onload = () => {
     SceneManager.setCurrentScene(logoScreen);
     console.log(SceneManager.getCurrentScene());
@@ -17,4 +18,8 @@ window.onload = () => {
         SceneManager.setCurrentScene(homeScreen);
         console.log(SceneManager.getCurrentScene());
     }, 5000);
+    setTimeout(function(){
+        SceneManager.setCurrentScene(gameScreen);
+        console.log(SceneManager.getCurrentScene());        
+    }, 7000);
 }
