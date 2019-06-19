@@ -1,12 +1,11 @@
 class Scene {
     constructor(){
+        this.layerManager = new LayerManager();
+
         this.div = document.createElement("div");
         this.div.className = "Scene";
         document.body.appendChild(this.div);
         this.hide();
-
-        this.layers = [];
-        this.layersCount = 0;
         
         this.index = SceneManager.addScene(this);
     }
@@ -16,11 +15,23 @@ class Scene {
     hide(){
         this.div.style.display = "none";
     }
-    addLayer(){
-        this.layersCount++;
+    addNewLayer(){
         let layer = new Layer(this);
-        this.layers.push(layer);
-        
+        this.layerManager.addLayer(layer);
         return layer;
+    }
+    addNewLayers(n = 1){
+        if(n > 0)
+            for(let i = 0; i < n; i++) 
+                this.addNewLayer();
+    }
+    getLayer(index){
+        return this.layerManager.getLayer(index);
+    }
+    render(){
+
+    }
+    update(){
+        
     }
 }
