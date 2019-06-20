@@ -1,7 +1,6 @@
-let aspectRatio = window.innerWidth / window.innerHeight; 
-aspectRatio = (aspectRatio <= 1) ? aspectRatio : (9 / 16);
+
 class Layer{
-    constructor(scene, width = 480, height = 854){
+    constructor(scene, width = GAME_WIDTH, height = GAME_HEIGHT){
         this.div = document.createElement("DIV");
         this.div.className = "Layer";
         this.canvas = document.createElement("CANVAS");
@@ -14,9 +13,10 @@ class Layer{
         this.context = this.canvas.getContext("2d");
         this.div.style.position = "absolute";
         this.div.style.zIndex = scene.layersCount - 1;
+        this.scene = scene;
         
-        this.div.appendChild(this.canvas)
-        scene.div.appendChild(this.div);
+        this.div.appendChild(this.canvas);
+        this.scene.div.appendChild(this.div);
     }
     show(){
         this.div.style.display = "block";

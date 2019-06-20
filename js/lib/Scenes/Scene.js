@@ -8,6 +8,8 @@ class Scene {
         this.hide();
         
         this.index = SceneManager.addScene(this);
+
+        this.uiManager = new UIManager();
     }
     show(){
         this.div.style.display = "block";
