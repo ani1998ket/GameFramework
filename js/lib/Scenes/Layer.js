@@ -1,7 +1,14 @@
+let aspectRatio = window.innerWidth / window.innerHeight; 
+aspectRatio = (aspectRatio <= 1) ? aspectRatio : (480 / 640);
 class Layer{
     constructor(scene, width = 480, height = 640){
         this.div = document.createElement("DIV");
+        this.div.className = "Layer";
         this.canvas = document.createElement("CANVAS");
+        this.canvas.style.height = "100vh";
+        this.canvas.style.width = `${aspectRatio * 100}vh`;
+
+        this.canvas.className = "LayerCanvas";
         this.canvas.width = width;
         this.canvas.height = height;
         this.context = this.canvas.getContext("2d");
