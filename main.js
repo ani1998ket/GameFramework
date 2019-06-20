@@ -21,5 +21,5 @@ window.onload = () => {
     setTimeout(function(){
         SceneManager.setCurrentScene(gameScreen);
         console.log(SceneManager.getCurrentScene());        
-    }, 7000);
+    }, 8000);
 }
