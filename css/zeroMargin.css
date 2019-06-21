@@ -3,3 +3,6 @@
     padding : 0px;
     overflow: hidden;
 }
+html, body {
+    height: 100%
+}

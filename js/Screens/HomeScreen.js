@@ -22,10 +22,10 @@ class HomeScreen extends Scene{
             
         this.addNewLayer();
         this.background = this.getLayer(0);
-        this.playButton = new ImageButton(this.background, button1u, button1d, new Vector2d(240 - 150, 200),  300, 50);
-        this.settingsButton = new ImageButton(this.background, button2u, button2d, new Vector2d(240 - 150, 300),  300, 50);
-        this.highScoreButton = new ImageButton(this.background, button3u, button3d, new Vector2d(240 - 150, 400),  300, 50);
-        this.creditsButton = new ImageButton(this.background, button4u, button4d, new Vector2d(240 - 150, 500),  300, 50);
+        this.playButton = new ImageButton(this.background, button1u, button1d, new Vector2d(GAME_WIDTH/2 - 150, 200),  300, 50);
+        this.settingsButton = new ImageButton(this.background, button2u, button2d, new Vector2d(GAME_WIDTH/2 - 150, 300),  300, 50);
+        this.highScoreButton = new ImageButton(this.background, button3u, button3d, new Vector2d(GAME_WIDTH/2 - 150, 400),  300, 50);
+        this.creditsButton = new ImageButton(this.background, button4u, button4d, new Vector2d(GAME_WIDTH/2 - 150, 500),  300, 50);
         this.playButton.onClick = () => {
             setTimeout(()=>{
                 SceneManager.setCurrentScene(SceneManager.getScene(3));
