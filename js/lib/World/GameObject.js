@@ -1,6 +1,7 @@
 class GameObject{
-    constructor(world, layer, position = new Vector2d(), width, height){
-        this.world = world;
+    constructor(layer, position = new Vector2d(), width, height){
+        this.world;
+        
         this.layer = layer;
         this.position = position;
         this.velocity = new Vector2d();

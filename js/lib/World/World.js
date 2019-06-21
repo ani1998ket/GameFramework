@@ -1,13 +1,14 @@
 class World{
-    constructor(scene){
+    constructor(){
         this.gameObjects = [];
         this.gameObjectsCount = 0;
 
-        this.scene = scene;
+        this.scene;
     }
     addGameObject(object){
         this.gameObjects.push(object);
         object.index = this.gameObjectsCount;
+        object.world = this;
         this.gameObjectsCount++;
     }
     getGameObject(index){

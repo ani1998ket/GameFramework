@@ -3,7 +3,8 @@ class GameScreen extends Scene{
         super();
         this.addNewLayers(3);
         this.gameWorld = new World();
-        this.gameWorld.addGameObject( new Bird(this.gameWorld, this.getLayer(2), new Vector2d(50, 427), 30, 30));
+        this.gameWorld.addGameObject( new Bird(this.getLayer(2), new Vector2d(50, 427), 30, 30));
+        this.gameWorld.addGameObject(new GameObject(this.getLayer(1), new Vector2d(100, 50), 50, 400));
     }
 
     update(){

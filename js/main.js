@@ -18,8 +18,5 @@ window.onload = () => {
         SceneManager.setCurrentScene(homeScreen);
         console.log(SceneManager.getCurrentScene());
     }, 5000);
-    // setTimeout(function(){
-    //     SceneManager.setCurrentScene(gameScreen);
-    //     console.log(SceneManager.getCurrentScene());        
-    // }, 8000);
+
 }
