@@ -1,37 +1,14 @@
-
-let bird = {
-    position : {
-        x : 50,
-        y : 320
-    },
-    velocity : {
-        x : 0,
-        y : 0
-    },
-    acceleration : {
-        x : 0,
-        y : 1
-    },
-    width : 20,
-    height : 20,
-};
 class GameScreen extends Scene{
     constructor(){
         super();
         this.addNewLayers(3);
+        this.gameWorld = new World();
+        this.gameWorld.addGameObject( new Bird(this.gameWorld, this.getLayer(2), new Vector2d(50, 427), 30, 30));
     }
 
     update(){
         let playerLayer = this.getLayer(2);  
-        bird.position.x += bird.velocity.x;
-        bird.velocity.x += bird.acceleration.x;
-        bird.position.y += bird.velocity.y;
-        bird.velocity.y += bird.acceleration.y;
-
-        if(bird.position.y > playerLayer.canvas.height){
-            bird.position.y = playerLayer.canvas.height;
-            bird.velocity.y -= 50;
-        }
+        this.gameWorld.update();
     }
 
     render(){
@@ -40,10 +17,8 @@ class GameScreen extends Scene{
         let playerLayer = this.getLayer(2);
 
         background.canvas.style.backgroundColor = "blue";
-        playerLayer.context.clearRect(0, 0, playerLayer.canvas.width, playerLayer.canvas.height);
-        playerLayer.context.fillRect(bird.position.x, bird.position.y, bird.width, bird.height);
-
-        
+        playerLayer.context.clearRect(0, 0, playerLayer.canvas.width, playerLayer.canvas.height); 
+        this.gameWorld.render();  
     }
 
 

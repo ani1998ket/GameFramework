@@ -14,8 +14,8 @@ class LoadingScreen extends Scene{
         background.context.fillStyle = "green";
         foreground.context.fillStyle = "pink";
 
-        background.context.fillRect(240 - 150, 320 - 10, this.x, 20);
-        foreground.context.fillRect(240 - 150, 320 - 10, this.x, 20);
+        background.context.fillRect(GAME_WIDTH/2 - 150, GAME_HEIGHT/2 - 10, this.x, 20);
+        foreground.context.fillRect(GAME_WIDTH/2 - 150, GAME_HEIGHT/2 - 50, this.x, 20);
         if( this.x < 300) this.x++;
     }
 }

@@ -31,7 +31,7 @@ class Scene {
         return this.layerManager.getLayer(index);
     }
     render(){
-
+        
     }
     update(){
         

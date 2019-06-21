@@ -26,11 +26,8 @@ class Vector2d{
     }
     subtract(vec){
         return this.add(vec.negative());
-    }
-    scale(k){
-        return new Vector2d(k * this.x, k * this.y);
-    }
-    scale(a, b){
+    }   
+    scale(a = 1, b = 1){
         return new Vector2d(a * this.x, b * this.y);
     }
     dot(vec){
